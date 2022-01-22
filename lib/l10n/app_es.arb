@@ -1,0 +1,19 @@
+{
+    "title": "CALCULAR IMC",
+    "male": "HOMBRE",
+    "female": "MUJER",
+    "height": "ALTURA",
+    "weight": "PESO",
+    "age": "EDAD",
+    "bottomButton": "CALCULAR",
+    "resultTitle": "Resultado",
+    "recommendationsTitle": "Recomendaciones",
+    "underweight": "Peso Insuficiente",
+    "healthy": "Saludable",
+    "overweight": "Sobrepeso",
+    "obes_one": "Obesidad Tipo 1",
+    "obes_two": "Obesidad Tipo 2",
+    "obes_three": "Obesidad Morbida",
+    "blabla": "Bla Bla Bla",
+    "helloWorld": "¡Hola Mundo!"
+}

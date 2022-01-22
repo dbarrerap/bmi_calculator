@@ -1,0 +1,22 @@
+{
+    "title": "BMI CALCULATOR",
+    "male": "MALE",
+    "female": "FEMALE",
+    "height": "HEIGHT",
+    "weight": "WEIGHT",
+    "age": "AGE",
+    "bottomButton": "CALCULATE",
+    "resultTitle": "Your Result",
+    "recommendationsTitle": "Recommendations",
+    "underweight": "Underweight",
+    "healthy": "Healthy",
+    "overweight": "Overweight",
+    "obes_one": "Obesity Type 1",
+    "obes_two": "Obesity Type 2",
+    "obes_three": "Severe Obesity",
+    "blabla": "Blah Blah",
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+      "description": "The conventional newborn programmer greeting"
+    }
+}
