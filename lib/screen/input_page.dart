@@ -140,12 +140,15 @@ class _InputPageState extends State<InputPage> {
                           style: kLabelTextStyle,
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
                           children: [
                             Text(
                               _weight.toString(),
                               style: kNumberTextStyle,
                             ),
-                            Text(
+                            const Text(
                               'kg',
                               style: kLabelTextStyle,
                             ),
