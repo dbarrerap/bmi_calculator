@@ -1,5 +1,8 @@
 import 'package:bmi_calculator/components/bottom_button.dart';
+import 'package:bmi_calculator/components/card_button.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/components/type.dart';
+import 'package:bmi_calculator/screen/water_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/components/constants.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -72,53 +75,50 @@ class ResultsPage extends StatelessWidget {
                       style: kBodyTextStyle,
                     ),
                   ),
-                  ReusableCard(
-                    background: kActiveCardColor,
-                    child: Column(
-                      children: [
-                        Text(
-                          AppLocalizations.of(context)!.diet,
-                          style: kResultTextStyle,
+                  CardButton(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WaterPage(
+                            title: AppLocalizations.of(context)!.diet,
+                            value: diet,
+                            type: TYPE.DIET,
+                          ),
                         ),
-                        Text(
-                          diet,
-                          textAlign: TextAlign.left,
-                          style: kBodyTextStyle,
-                        ),
-                      ],
-                    ),
+                      );
+                    },
+                    text: AppLocalizations.of(context)!.diet,
                   ),
-                  ReusableCard(
-                    background: kActiveCardColor,
-                    child: Column(
-                      children: [
-                        Text(
-                          AppLocalizations.of(context)!.exercise,
-                          style: kResultTextStyle,
+                  CardButton(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WaterPage(
+                            title: AppLocalizations.of(context)!.exercise,
+                            value: exercise,
+                            type: TYPE.EXERCISE,
+                          ),
                         ),
-                        Text(
-                          exercise,
-                          textAlign: TextAlign.left,
-                          style: kBodyTextStyle,
-                        ),
-                      ],
-                    ),
+                      );
+                    },
+                    text: AppLocalizations.of(context)!.exercise,
                   ),
-                  ReusableCard(
-                    background: kActiveCardColor,
-                    child: Column(
-                      children: [
-                        Text(
-                          AppLocalizations.of(context)!.water,
-                          style: kResultTextStyle,
+                  CardButton(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WaterPage(
+                            title: AppLocalizations.of(context)!.water,
+                            value: water,
+                            type: TYPE.WATER,
+                          ),
                         ),
-                        Text(
-                          water,
-                          textAlign: TextAlign.left,
-                          style: kBodyTextStyle,
-                        ),
-                      ],
-                    ),
+                      );
+                    },
+                    text: AppLocalizations.of(context)!.water,
                   ),
                 ],
               ),
@@ -129,7 +129,7 @@ class ResultsPage extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
             },
-          )
+          ),
         ],
       ),
     );

@@ -1,0 +1,5 @@
+enum TYPE {
+  WATER,
+  EXERCISE,
+  DIET
+}
