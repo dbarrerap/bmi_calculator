@@ -14,6 +14,13 @@ class Calculation {
     return _bmi.toStringAsFixed(2);
   }
 
+  String getWater() {
+    if (locale == 'es') {
+      return "Ingesta de agua";
+    }
+    return "Water intake";
+  }
+
   String getExercise() {
     if (locale == 'es') {
       if (_bmi >= 40) {

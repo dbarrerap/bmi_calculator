@@ -225,8 +225,6 @@ class _InputPageState extends State<InputPage> {
           ),
           BottomButton(
             onTap: () {
-              print(myLocale);
-
               Calculation calc =
                   Calculation(height: _sliderValue.toInt(), weight: _weight, locale: myLocale);
 
@@ -239,6 +237,7 @@ class _InputPageState extends State<InputPage> {
                     interpretation: calc.getInterpretation(),
                     diet: calc.getDiet(),
                     exercise: calc.getExercise(),
+                    water: calc.getWater(),
                   ),
                 ),
               );

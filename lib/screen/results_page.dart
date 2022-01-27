@@ -10,13 +10,15 @@ class ResultsPage extends StatelessWidget {
   final String interpretation;
   final String diet;
   final String exercise;
+  final String water;
 
   ResultsPage(
       {required this.bmiResult,
       required this.resultText,
       required this.interpretation,
       required this.diet,
-      required this.exercise});
+      required this.exercise,
+      required this.water});
 
   @override
   Widget build(BuildContext context) {
@@ -75,15 +77,43 @@ class ResultsPage extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
+                          AppLocalizations.of(context)!.diet,
+                          style: kResultTextStyle,
+                        ),
+                        Text(
                           diet,
                           textAlign: TextAlign.left,
                           style: kBodyTextStyle,
                         ),
-                        const SizedBox(
-                          height: 10.0,
+                      ],
+                    ),
+                  ),
+                  ReusableCard(
+                    background: kActiveCardColor,
+                    child: Column(
+                      children: [
+                        Text(
+                          AppLocalizations.of(context)!.exercise,
+                          style: kResultTextStyle,
                         ),
                         Text(
                           exercise,
+                          textAlign: TextAlign.left,
+                          style: kBodyTextStyle,
+                        ),
+                      ],
+                    ),
+                  ),
+                  ReusableCard(
+                    background: kActiveCardColor,
+                    child: Column(
+                      children: [
+                        Text(
+                          AppLocalizations.of(context)!.water,
+                          style: kResultTextStyle,
+                        ),
+                        Text(
+                          water,
                           textAlign: TextAlign.left,
                           style: kBodyTextStyle,
                         ),
