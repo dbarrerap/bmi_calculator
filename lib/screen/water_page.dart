@@ -5,12 +5,12 @@ import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:bmi_calculator/components/constants.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
 
-class WaterPage extends StatelessWidget {
+class MoreInfoPage extends StatelessWidget {
   final String title; // Titulo de cuadro de datos
   final String value; // Texto a aparece
   final TYPE type; // Indicador para carga de imagen
 
-  const WaterPage(
+  const MoreInfoPage(
       {Key? key, required this.title, required this.value, required this.type})
       : super(key: key);
 
@@ -39,7 +39,8 @@ class WaterPage extends StatelessWidget {
                       style: kBodyTextStyle,
                     ),
                     Image.asset(
-                        'images/${type.toString().substring(5).toLowerCase()}.jpg'),
+                      'images/${type.toString().substring(5).toLowerCase()}.jpg',
+                    ),
                   ],
                 ),
               ),

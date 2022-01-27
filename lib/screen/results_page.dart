@@ -80,7 +80,7 @@ class ResultsPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => WaterPage(
+                          builder: (context) => MoreInfoPage(
                             title: AppLocalizations.of(context)!.diet,
                             value: diet,
                             type: TYPE.DIET,
@@ -95,7 +95,7 @@ class ResultsPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => WaterPage(
+                          builder: (context) => MoreInfoPage(
                             title: AppLocalizations.of(context)!.exercise,
                             value: exercise,
                             type: TYPE.EXERCISE,
@@ -110,7 +110,7 @@ class ResultsPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => WaterPage(
+                          builder: (context) => MoreInfoPage(
                             title: AppLocalizations.of(context)!.water,
                             value: water,
                             type: TYPE.WATER,
@@ -125,7 +125,7 @@ class ResultsPage extends StatelessWidget {
             ),
           ),
           BottomButton(
-            buttonTitle: AppLocalizations.of(context)!.bottomButton,
+            buttonTitle: AppLocalizations.of(context)!.back,
             onTap: () {
               Navigator.pop(context);
             },
