@@ -84,6 +84,7 @@ class ResultsPage extends StatelessWidget {
                             title: AppLocalizations.of(context)!.diet,
                             value: diet,
                             type: TYPE.DIET,
+                            url: "https://dbarrerap.github.io",
                           ),
                         ),
                       );

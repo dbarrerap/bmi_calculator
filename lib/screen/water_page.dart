@@ -1,17 +1,24 @@
+import 'package:bmi_calculator/components/card_button.dart';
 import 'package:bmi_calculator/components/type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:bmi_calculator/components/constants.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MoreInfoPage extends StatelessWidget {
   final String title; // Titulo de cuadro de datos
   final String value; // Texto a aparece
   final TYPE type; // Indicador para carga de imagen
+  final String? url;
 
   const MoreInfoPage(
-      {Key? key, required this.title, required this.value, required this.type})
+      {Key? key,
+      required this.title,
+      required this.value,
+      required this.type,
+      this.url})
       : super(key: key);
 
   @override
@@ -38,6 +45,11 @@ class MoreInfoPage extends StatelessWidget {
                       textAlign: TextAlign.left,
                       style: kBodyTextStyle,
                     ),
+                    if (url != null)
+                      CardButton(
+                        text: AppLocalizations.of(context)!.moreinfo,
+                        onTap: () => launch(url.toString()),
+                      ),
                     Image.asset(
                       'images/${type.toString().substring(5).toLowerCase()}.jpg',
                     ),
