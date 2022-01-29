@@ -14,6 +14,7 @@ class ResultsPage extends StatelessWidget {
   final String diet;
   final String exercise;
   final String water;
+  final String url;
 
   ResultsPage(
       {required this.bmiResult,
@@ -21,7 +22,8 @@ class ResultsPage extends StatelessWidget {
       required this.interpretation,
       required this.diet,
       required this.exercise,
-      required this.water});
+      required this.water,
+      required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +86,7 @@ class ResultsPage extends StatelessWidget {
                             title: AppLocalizations.of(context)!.diet,
                             value: diet,
                             type: TYPE.DIET,
-                            url: getDietUrl(double.parse(bmiResult), context),
+                            url: url,
                           ),
                         ),
                       );
@@ -134,29 +136,5 @@ class ResultsPage extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  getDietUrl(double bmi, BuildContext context) {
-    if (Localizations.localeOf(context).toString() == 'es') {
-      // Links en español
-      if (bmi >= 30) {
-        return 'https://food.ndtv.com/food-drinks/obesity-diet-what-to-eat-and-avoid-to-manage-obesity-1815463';
-      } else if (bmi >= 25) {
-        return 'https://www.ucsfhealth.org/education/guidelines-for-a-low-cholesterol-low-saturated-fat-diet';
-      } else if (bmi >= 18.5) {
-        return 'https://www.who.int/news-room/fact-sheets/detail/healthy-diet';
-      } else {
-        return 'https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/underweight/faq-20058429';
-      }
-    }
-    if (bmi >= 30) {
-      return 'https://food.ndtv.com/food-drinks/obesity-diet-what-to-eat-and-avoid-to-manage-obesity-1815463';
-    } else if (bmi >= 25) {
-      return 'https://www.ucsfhealth.org/education/guidelines-for-a-low-cholesterol-low-saturated-fat-diet';
-    } else if (bmi >= 18.5) {
-      return 'https://www.who.int/news-room/fact-sheets/detail/healthy-diet';
-    } else {
-      return 'https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/underweight/faq-20058429';
-    }
   }
 }

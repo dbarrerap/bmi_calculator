@@ -1,7 +1,8 @@
 import 'dart:math';
 
 class Calculation {
-  Calculation({required this.height, required this.weight, required this.locale});
+  Calculation(
+      {required this.height, required this.weight, required this.locale});
 
   final int height;
   final int weight;
@@ -19,6 +20,30 @@ class Calculation {
       return "Ingesta de agua";
     }
     return "Water intake";
+  }
+
+  String getUrl() {
+    if (locale == 'es') {
+      // Links en español
+      if (_bmi >= 30) {
+        return 'https://food.ndtv.com/food-drinks/obesity-diet-what-to-eat-and-avoid-to-manage-obesity-1815463';
+      } else if (_bmi >= 25) {
+        return 'https://www.ucsfhealth.org/education/guidelines-for-a-low-cholesterol-low-saturated-fat-diet';
+      } else if (_bmi >= 18.5) {
+        return 'https://www.who.int/news-room/fact-sheets/detail/healthy-diet';
+      } else {
+        return 'https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/underweight/faq-20058429';
+      }
+    }
+    if (_bmi >= 30) {
+      return 'https://food.ndtv.com/food-drinks/obesity-diet-what-to-eat-and-avoid-to-manage-obesity-1815463';
+    } else if (_bmi >= 25) {
+      return 'https://www.ucsfhealth.org/education/guidelines-for-a-low-cholesterol-low-saturated-fat-diet';
+    } else if (_bmi >= 18.5) {
+      return 'https://www.who.int/news-room/fact-sheets/detail/healthy-diet';
+    } else {
+      return 'https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/underweight/faq-20058429';
+    }
   }
 
   String getExercise() {
@@ -112,7 +137,6 @@ class Calculation {
     } else {
       return 'Underweight';
     }
-
   }
 
   String getInterpretation() {

@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
@@ -24,7 +23,6 @@ class _InputPageState extends State<InputPage> {
   num _sliderValue = 160;
   int _age = 20;
   int _weight = 60;
-
 
   @override
   Widget build(BuildContext context) {
@@ -225,8 +223,10 @@ class _InputPageState extends State<InputPage> {
           ),
           BottomButton(
             onTap: () {
-              Calculation calc =
-                  Calculation(height: _sliderValue.toInt(), weight: _weight, locale: myLocale);
+              Calculation calc = Calculation(
+                  height: _sliderValue.toInt(),
+                  weight: _weight,
+                  locale: myLocale);
 
               Navigator.push(
                 context,
@@ -238,6 +238,7 @@ class _InputPageState extends State<InputPage> {
                     diet: calc.getDiet(),
                     exercise: calc.getExercise(),
                     water: calc.getWater(),
+                    url: calc.getUrl(),
                   ),
                 ),
               );
